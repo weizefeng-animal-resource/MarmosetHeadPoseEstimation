@@ -10,9 +10,8 @@ from Face2Screen import Face2Screen
 def main(path):
     with open('parameters.pickle', 'br') as f:
         parameters = pickle.load(f)
-    print(parameters)
-    deeplabcut_output = pd.read_csv(path, header=2)
 
+    deeplabcut_output = pd.read_csv(path, header=2)
     accuracy_threshold = 0.96
     is_accurate = np.array(deeplabcut_output[[
         'likelihood',  # amount
